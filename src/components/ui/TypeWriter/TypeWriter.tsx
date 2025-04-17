@@ -9,6 +9,31 @@ interface Props {
   className?: string;
 }
 
+/**
+ * A typewriter effect component that loops through an array of texts, displaying each text one character at a time.
+ * The text is typed out and then deleted before the next text starts. This creates a dynamic typing loop effect.
+ *
+ * The component allows customization of typing speed and pause duration between text deletions.
+ *
+ * @component
+ * @example
+ * // Use the default typing speed and pause, looping through texts
+ * <TypewriterLoop texts={['Hello, world!', 'Welcome to our site.']} />
+ *
+ * // Use a faster typing speed and shorter pause between texts
+ * <TypewriterLoop texts={['Short text 1', 'Short text 2']} speed={100} pause={1000} />
+ *
+ * // Use custom styling for the typewriter text
+ * <TypewriterLoop texts={['Typewriting effect']} className="text-xl font-bold text-blue-500" />
+ *
+ * @param {Object} props - The props for the component.
+ * @param {string[]} props.texts - An array of strings that will be typed out in the component.
+ * @param {number} [props.speed=200] - The typing speed in milliseconds. Default is 200ms.
+ * @param {number} [props.pause=2500] - The pause duration between deleting and typing new text, in milliseconds. Default is 2500ms.
+ * @param {string} [props.className] - Optional custom class name for styling.
+ * @returns {JSX.Element} - The TypewriterLoop component.
+ */
+
 export const TypewriterLoop: React.FC<Props> = ({
   texts,
   speed = 200,
