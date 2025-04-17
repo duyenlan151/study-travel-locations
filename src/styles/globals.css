@@ -52,3 +52,23 @@
     @apply bg-background text-foreground;
   }
 }
+
+@keyframes slide-loop {
+  0% { transform: translateY(100%); opacity: 0; }
+  5%, 45% { transform: translateY(0); opacity: 1; }
+  50%, 100% { transform: translateY(-100%); opacity: 0; }
+}
+
+@keyframes slide-loop-delay {
+  0%, 45% { transform: translateY(100%); opacity: 0; }
+  50%, 95% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-100%); opacity: 0; }
+}
+
+.animate-slide-loop {
+  animation: slide-loop 4s infinite ease-in-out;
+}
+
+.animate-slide-loop-delay {
+  animation: slide-loop-delay 4s infinite ease-in-out;
+}
