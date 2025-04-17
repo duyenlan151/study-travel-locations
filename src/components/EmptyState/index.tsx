@@ -2,7 +2,8 @@
 
 import { useRouter } from 'next/navigation';
 
-import Button from './Button';
+import { Button } from '../ui';
+
 import Heading from './Heading';
 
 interface EmptyStateProps {
@@ -13,7 +14,7 @@ interface EmptyStateProps {
   reset?: () => void;
 }
 
-const EmptyState: React.FC<EmptyStateProps> = ({
+export const EmptyState: React.FC<EmptyStateProps> = ({
   title = 'No exact matches',
   subtitle = 'Try changing or removing some of your filters.',
   label = 'Remove all filters',
@@ -26,30 +27,28 @@ const EmptyState: React.FC<EmptyStateProps> = ({
     <div
       className="
         h-[60vh]
-        flex 
-        flex-col 
-        gap-2 
-        justify-center 
-        items-center 
+        flex
+        flex-col
+        gap-2
+        justify-center
+        items-center
       "
     >
       <Heading center title={title} subtitle={subtitle} />
       <div
-        className="w-48 mt-4 flex 
-        flex-row 
-        gap-2 "
+        className="w-[22em] mt-4 flex
+        flex-row
+        gap-3 "
       >
         {showReset && (
           <Button
-            outline
+            variant="outline"
             label={label ?? 'Remove all filters'}
             onClick={() => reset && reset()}
           />
         )}
-        <Button outline label="Go Back" onClick={() => router.push('/')} />
+        <Button label="Go Back" onClick={() => router.push('/')} />
       </div>
     </div>
   );
 };
-
-export default EmptyState;

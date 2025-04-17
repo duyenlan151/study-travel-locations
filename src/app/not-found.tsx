@@ -16,8 +16,8 @@ const NotFound: React.FC<NotFoundStateProps> = ({ error }) => {
 
   return (
     <EmptyState
-      title="Uh No"
-      subtitle="Could not find requested resource"
+      title="🚧 Under Construction"
+      subtitle="We're working hard to bring this page to life. Please check back later!"
       showReset
       label="Go back home"
     />

@@ -2,11 +2,10 @@ import '@/styles/globals.css';
 import { Inter, Poppins } from 'next/font/google';
 import { Toaster } from 'react-hot-toast';
 
-import MainFooter from '@/components/Footer';
-import MainNavbar from '@/components/Navbar';
 import { QueryProvider } from '@/providers/query';
 import { ThemeProvider } from '@/providers/theme';
 import type { ChildrenProps } from '@/types';
+import { Header, MainFooter } from '@/components';
 
 const inter = Inter({
   subsets: ['latin'],
@@ -58,7 +57,7 @@ export default async function RootLayout({ children }: ChildrenProps) {
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <QueryProvider>
             <div className="flex min-h-screen flex-col bg-background">
-              <MainNavbar />
+              <Header />
               <main className="flex-1">{children}</main>
               <MainFooter />
             </div>
