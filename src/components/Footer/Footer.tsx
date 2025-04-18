@@ -63,12 +63,8 @@ export function MainFooter() {
           <h3 className="font-semibold mb-3">Quick Links</h3>
           <ul className="space-y-2 text-sm">
             {navQuickLinks.map(item => (
-              <li>
-                <Link
-                  key={item.href}
-                  href={item.href}
-                  className="hover:underline"
-                >
+              <li key={item.href}>
+                <Link href={item.href} className="hover:underline">
                   {item.label}
                 </Link>
               </li>
