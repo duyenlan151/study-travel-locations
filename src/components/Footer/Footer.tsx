@@ -34,6 +34,7 @@ export function MainFooter() {
   });
 
   const onSubmit = (data: NewsletterFormData) => {
+    // eslint-disable-next-line no-console
     console.log('Form data:', data);
     setIsSubmitting(true);
 
