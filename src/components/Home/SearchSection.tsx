@@ -1,13 +1,14 @@
 'use client';
 
 import { useForm } from 'react-hook-form';
-// import { useState } from 'react';
+import { useState } from 'react';
 import { Search } from 'lucide-react';
 
-import { Button, Input } from '@/components/ui';
+import { Button, Input, SelectDropdown } from '@/components/ui';
 
 export function SearchSection() {
   // const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedGP, setSelectedGP] = useState<string | null>('bahrain');
   const {
     register,
     formState: { errors },
@@ -36,18 +37,17 @@ export function SearchSection() {
 
         {/* Dropdown */}
         <div className="mt-1 sm:mt-0 sm:w-1/6 border sm:border-l-0 border-gray-300 dark:border-gray-700">
-          <select
-            className="w-full h-11 px-4 text-sm dark:bg-gray-800 dark:text-white focus:outline-none rounded-none"
-            defaultValue=""
-          >
-            <option value="" disabled>
-              Select location
-            </option>
-            <option value="vietnam">Vietnam</option>
-            <option value="japan">Japan</option>
-            <option value="korea">Korea</option>
-            <option value="thailand">Thailand</option>
-          </select>
+          <SelectDropdown
+            options={[
+              { label: 'Bahrain GP', value: 'bahrain' },
+              { label: 'Monaco GP', value: 'monaco' },
+            ]}
+            className="h-full"
+            classNameSelect="border-0 shadow-none h-full outline-none"
+            value={selectedGP}
+            onChange={val => setSelectedGP(val)}
+            isLoading={false}
+          />
         </div>
 
         {/* Button */}
