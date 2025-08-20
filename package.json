@@ -8,7 +8,7 @@
     "node": ">=20.0.0"
   },
   "scripts": {
-    "dev": "next dev --turbopack",
+    "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "analyze": "ANALYZE=true next build",
@@ -19,7 +19,11 @@
     "postbuild": "yarn prisma generate",
     "postinstall": "yarn prisma generate",
     "test": "jest --passWithNoTests",
-    "test:watch": "jest --watch --passWithNoTests"
+    "test:watch": "jest --watch --passWithNoTests",
+
+    "docker:build": "sh ./docker-build.sh",
+    "docker:run": "sh ./docker-run.sh",
+    "docker:restart": "npm run docker:build && npm run docker:run"
   },
   "lint-staged": {
     "*.{js,jsx,md,ts,tsx,html,css,scss}": "yarn prettier",
