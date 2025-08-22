@@ -17,7 +17,8 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: my-nextjs-app
+    image: ${IMAGE_NAME}
+    container_name: study-travel-locations
     ports:
       - '3000:3000'
     depends_on:

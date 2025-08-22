@@ -21,9 +21,9 @@
     "test": "jest --passWithNoTests",
     "test:watch": "jest --watch --passWithNoTests",
 
-    "docker:build": "sh ./docker-build.sh",
-    "docker:run": "sh ./docker-run.sh",
-    "docker:restart": "npm run docker:build && npm run docker:run"
+    "docker:up": "docker-compose up -d --build",
+    "docker:down": "docker-compose down",
+    "docker:logs": "docker-compose logs -f app"
   },
   "lint-staged": {
     "*.{js,jsx,md,ts,tsx,html,css,scss}": "yarn prettier",
