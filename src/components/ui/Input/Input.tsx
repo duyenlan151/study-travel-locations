@@ -3,6 +3,8 @@
 import type { FieldValues, RegisterOptions } from 'react-hook-form';
 import React from 'react';
 
+import { cn } from '@/lib/cn';
+
 import type { InputProps } from './interface';
 
 /**
@@ -65,14 +67,14 @@ export const Input = <T extends FieldValues>({
         id={id}
         disabled={disabled}
         type={type}
-        className={`
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}
+        className={cn(
+          `
           peer
           w-full
-          p-4
-          pt-6
           font-light
           bg-white
-          border-2
           rounded-md
           outline-none
           transition
@@ -82,11 +84,12 @@ export const Input = <T extends FieldValues>({
           ${hasError ? 'border-rose-500' : 'border-neutral-300'}
           ${hasError ? 'focus:border-rose-500' : 'focus:border-black'}
           text-neutral-800
-        `}
+          focus:outline-none focus:ring-0 focus:border-transparent
+        `,
+          props.className
+        )}
         // eslint-disable-next-line react/jsx-props-no-spreading
         {...registerProps}
-        // eslint-disable-next-line react/jsx-props-no-spreading
-        {...props}
       />
 
       {label && (
