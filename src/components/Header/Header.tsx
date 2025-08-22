@@ -9,7 +9,7 @@ import { MainNavbar } from '../Navbar';
 
 export const Header: FC<CurrentUserProps> = () => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur">
+    <header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur">
       <div className="container flex h-16 items-center justify-between">
         <Link href="/" className="flex items-center space-x-1">
           <div className="w-8 h-8 bg-primary rounded-full flex items-center justify-center">
